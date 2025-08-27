@@ -6,6 +6,6 @@
 
 ✅ It provides a foundation to practice SQL (DDL, DML, Joins, Aggregations, Window Functions) and extend into data analytics, dashboards, and predictive modeling.
 
- 🎯 # Process Flow :
+ #  🎯 Process Flow :
 
  ![process flow diagram](https://github.com/user-attachments/assets/c8c3adac-6785-4191-b929-c4efd62db15b)
