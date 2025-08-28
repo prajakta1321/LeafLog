@@ -1,0 +1,9 @@
+# creating table : household
+-- 1. Households table
+CREATE TABLE Households (
+    household_id INT AUTO_INCREMENT PRIMARY KEY,   -- Unique ID for each household (auto increments automatically)
+    household_name VARCHAR(100) NOT NULL,          -- Name/identifier of the household (string up to 100 characters, cannot be NULL)
+    city_zone ENUM('North', 'South', 'East', 'West', 'Central') NOT NULL, 
+                                                   -- Which city zone the household belongs to; restricted to 5 fixed options
+    members_count INT CHECK (members_count > 0)    -- Number of people in the household, must be greater than 0
+);
