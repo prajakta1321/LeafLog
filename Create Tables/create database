@@ -1,0 +1,5 @@
+# creating the databases
+
+create database leaflog;   # first i will create a database in mysql so the sustem knows that a data base is initiated.
+
+use leaflog;   # the we will try to access the database which we created just now so we can start creating tables
