@@ -1,0 +1,10 @@
+CREATE TABLE EnergyUsage (
+    usage_id INT AUTO_INCREMENT PRIMARY KEY,       -- Unique ID for each energy usage record
+    household_id INT NOT NULL,                     -- Links this usage record to a specific household (foreign key)
+    month INT CHECK (month BETWEEN 1 AND 12),      -- Month of the record (1 = Jan, 12 = Dec) with validation
+    year INT CHECK (year >= 2000),                 -- Year of the record (must be year 2000 or later)
+    electricity_kwh DECIMAL(10,2) NOT NULL,        -- Total electricity consumed (kilowatt-hours), up to 10 digits with 2 decimals
+    renewable_kwh DECIMAL(10,2) DEFAULT 0,         -- Portion of electricity from renewable sources, default 0 if not recorded
+    FOREIGN KEY (household_id) REFERENCES Households(household_id) 
+                                                   -- Ensures data consistency by linking to Households table
+);
