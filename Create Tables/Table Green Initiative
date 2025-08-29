@@ -1,0 +1,8 @@
+-- 5. Green Initiatives
+CREATE TABLE GreenInitiatives (
+    initiative_id INT AUTO_INCREMENT PRIMARY KEY,  -- Unique ID for each initiative
+    household_id INT NOT NULL,                     -- Links to household
+    initiative_name VARCHAR(100) NOT NULL,         -- Name of the initiative (e.g., "Solar Panel Installation")
+    start_date DATE NOT NULL,                      -- When the initiative started
+    FOREIGN KEY (household_id) REFERENCES Households(household_id)
+);
