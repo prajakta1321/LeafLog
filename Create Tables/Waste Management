@@ -1,0 +1,10 @@
+-- 4. Waste Management
+CREATE TABLE WasteManagement (
+    waste_id INT AUTO_INCREMENT PRIMARY KEY,       -- Unique ID for each waste record
+    household_id INT NOT NULL,                     -- Links to household
+    month INT CHECK (month BETWEEN 1 AND 12),      -- Month of record
+    year INT CHECK (year >= 2000),                 -- Year of record
+    recycled_kg DECIMAL(10,2) DEFAULT 0,           -- Amount of recycled waste in kilograms (default 0)
+    non_recycled_kg DECIMAL(10,2) DEFAULT 0,       -- Amount of non-recycled waste in kilograms (default 0)
+    FOREIGN KEY (household_id) REFERENCES Households(household_id)
+);
