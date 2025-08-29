@@ -1,0 +1,9 @@
+-- 3. Water Usage
+CREATE TABLE WaterUsage (
+    water_id INT AUTO_INCREMENT PRIMARY KEY,       -- Unique ID for each water usage record
+    household_id INT NOT NULL,                     -- Links to household
+    month INT CHECK (month BETWEEN 1 AND 12),      -- Month of usage
+    year INT CHECK (year >= 2000),                 -- Year of usage
+    liters_consumed DECIMAL(12,2) NOT NULL,        -- Water consumption in liters (allows very large values with 2 decimals)
+    FOREIGN KEY (household_id) REFERENCES Households(household_id)
+);
