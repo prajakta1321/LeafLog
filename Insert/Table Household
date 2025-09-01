@@ -1,0 +1,28 @@
+ # inserting data into the household table
+INSERT INTO Households (household_name, city_zone, members_count)
+VALUES
+    ('Patil Family', 'North', 5),
+    ('Sharma House', 'East', 4),
+    ('Fernandes Villa', 'South', 3),
+    ('Deshmukh Residency', 'West', 6),
+    ('Khan Cottage', 'Central', 2),
+    ('Joshi Nivas', 'North', 7),
+    ('Mehta Mansion', 'South', 4),
+    ('Kulkarni Home', 'East', 5),
+    ('Rao Apartments', 'West', 3),
+    ('Iqbal House', 'Central', 6),
+    ('Pawar Family', 'North', 8),
+    ('Ghosh Villa', 'South', 5),
+    ('Singh Residency', 'East', 3),
+    ('Naik House', 'West', 4),
+    ('Ali Cottage', 'Central', 7),
+    ('Chavan Nivas', 'North', 6),
+    ('Mukherjee Home', 'East', 5),
+    ('Fernandes Residency', 'South', 4),
+    ('More Apartments', 'West', 2),
+    ('Kamat Villa', 'Central', 3),
+    ('Bhosale House', 'North', 9),
+    ('Reddy Nivas', 'East', 6),
+    ('Das Family', 'South', 5),
+    ('Salunkhe Home', 'West', 4),
+    ('Shaikh Cottage', 'Central', 8);
