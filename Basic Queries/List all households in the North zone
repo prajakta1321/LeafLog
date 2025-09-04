@@ -1,0 +1,5 @@
+# List all households in the North zone.
+
+SELECT household_id, household_name, city_zone, members_count
+FROM Households
+WHERE city_zone = 'North';
