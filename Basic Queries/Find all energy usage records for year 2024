@@ -1,0 +1,108 @@
+# Find all energy usage records for year 2024.
+SELECT usage_id, household_id, month, year, electricity_kwh, renewable_kwh
+FROM EnergyUsage
+WHERE year = 2024;
+
+# the above code returns Null value so we check and update year in energy usage table
+
+SELECT * FROM EnergyUsage LIMIT 5;
+
+# OPTIONAL CODE 
+-- Set year = 2024 for all rows
+UPDATE EnergyUsage
+SET year = 2024
+WHERE year IS NULL;
+
+-- Now update month values in order for first 25 rows
+-- (household_id assumed 1–25 in order)
+
+UPDATE EnergyUsage SET month = 1 WHERE usage_id = 1;
+UPDATE EnergyUsage SET month = 2 WHERE usage_id = 2;
+UPDATE EnergyUsage SET month = 3 WHERE usage_id = 3;
+UPDATE EnergyUsage SET month = 4 WHERE usage_id = 4;
+UPDATE EnergyUsage SET month = 5 WHERE usage_id = 5;
+UPDATE EnergyUsage SET month = 6 WHERE usage_id = 6;
+UPDATE EnergyUsage SET month = 7 WHERE usage_id = 7;
+UPDATE EnergyUsage SET month = 8 WHERE usage_id = 8;
+UPDATE EnergyUsage SET month = 9 WHERE usage_id = 9;
+UPDATE EnergyUsage SET month = 10 WHERE usage_id = 10;
+UPDATE EnergyUsage SET month = 11 WHERE usage_id = 11;
+UPDATE EnergyUsage SET month = 12 WHERE usage_id = 12;
+
+-- Loop back months for remaining rows
+UPDATE EnergyUsage SET month = 1 WHERE usage_id = 13;
+UPDATE EnergyUsage SET month = 2 WHERE usage_id = 14;
+UPDATE EnergyUsage SET month = 3 WHERE usage_id = 15;
+UPDATE EnergyUsage SET month = 4 WHERE usage_id = 16;
+UPDATE EnergyUsage SET month = 5 WHERE usage_id = 17;
+UPDATE EnergyUsage SET month = 6 WHERE usage_id = 18;
+UPDATE EnergyUsage SET month = 7 WHERE usage_id = 19;
+UPDATE EnergyUsage SET month = 8 WHERE usage_id = 20;
+UPDATE EnergyUsage SET month = 9 WHERE usage_id = 21;
+UPDATE EnergyUsage SET month = 10 WHERE usage_id = 22;
+UPDATE EnergyUsage SET month = 11 WHERE usage_id = 23;
+UPDATE EnergyUsage SET month = 12 WHERE usage_id = 24;
+UPDATE EnergyUsage SET month = 1 WHERE usage_id = 25;
+
+# OR
+UPDATE EnergyUsage
+SET month = 'January', year = 2025
+WHERE usage_id BETWEEN 1 AND 50;
+
+UPDATE EnergyUsage
+SET month = 'February', year = 2025
+WHERE usage_id BETWEEN 51 AND 100;
+ 
+# AND SO ON FOR EACH MONTH .....
+
+# We are using this code to update so it can be used for large datasets as well
+CREATE TABLE Months (
+    id INT PRIMARY KEY,
+    month_name VARCHAR(20),
+    year INT
+);
+
+INSERT INTO Months (id, month_name, year) VALUES
+(1, 'January', 2025),
+(2, 'February', 2025),
+(3, 'March', 2025),
+(4, 'April', 2025),
+(5, 'May', 2025),
+(6, 'June', 2025),
+(7, 'July', 2025),
+(8, 'August', 2025),
+(9, 'September', 2025),
+(10, 'October', 2025),
+(11, 'November', 2025),
+(12, 'December', 2025);
+
+UPDATE EnergyUsage eu
+JOIN Months m ON eu.usage_id % 12 = m.id - 1
+SET eu.month = m.month_name,
+eu.year = m.year;
+
+# the above code will give error : Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column.  To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+# so we will use the following optional codes:
+
+# Use the Primary Key in WHERE
+UPDATE EnergyUsage eu
+SET eu.month = ((eu.usage_id - 1) % 12) + 1,
+    eu.year = 2024
+WHERE eu.usage_id > 0;
+
+
+# Temporarily Turn Off Safe Update Mode
+SET SQL_SAFE_UPDATES = 0;
+
+# Disable Safe Mode in Workbench Preferences
+# Go to Edit → Preferences → SQL Editor
+# Uncheck "Safe Updates" (rejects UPDATEs and DELETEs without key in WHERE clause)
+# Reconnect to your DB
+
+# we use 1st option of primary key and run the commands again
+
+SELECT usage_id, household_id, month, year, electricity_kwh, renewable_kwh
+FROM EnergyUsage
+WHERE year = 2024;
+
+# now running properly without null columns
