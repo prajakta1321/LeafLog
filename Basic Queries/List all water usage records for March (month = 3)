@@ -1,0 +1,4 @@
+#  List all water usage records for March (month = 3)
+SELECT water_id, household_id, liters_consumed
+FROM WaterUsage
+WHERE month = 3;
