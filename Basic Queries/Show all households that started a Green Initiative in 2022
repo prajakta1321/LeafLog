@@ -1,0 +1,5 @@
+# Show all households that started a Green Initiative in 2022.
+SELECT g.initiative_id, h.household_name, g.initiative_name, g.start_date
+FROM GreenInitiatives g
+JOIN Households h ON g.household_id = h.household_id
+WHERE YEAR(g.start_date) = 2022;
