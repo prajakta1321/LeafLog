@@ -1,0 +1,4 @@
+# Average monthly water consumption per household
+SELECT household_id, AVG(liters_consumed) AS avg_monthly_consumption
+FROM WaterUsage
+GROUP BY household_id;
