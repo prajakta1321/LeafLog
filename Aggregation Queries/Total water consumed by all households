@@ -1,0 +1,3 @@
+# Total water consumed by all households
+SELECT SUM(liters_consumed) AS total_consumption
+FROM WaterUsage;
