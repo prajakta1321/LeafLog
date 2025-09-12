@@ -1,0 +1,6 @@
+# Find the month with the highest water consumption (overall)
+SELECT month, SUM(liters_consumed) AS total_monthly_consumption
+FROM WaterUsage
+GROUP BY month
+ORDER BY total_monthly_consumption DESC
+LIMIT 1;
