@@ -1,0 +1,5 @@
+# Yearly water consumption trend
+SELECT year, SUM(liters_consumed) AS yearly_consumption
+FROM WaterUsage
+GROUP BY year
+ORDER BY year;
