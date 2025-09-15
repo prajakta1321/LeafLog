@@ -1,0 +1,5 @@
+# Average water usage by city zone (joins with Households)
+SELECT h.city_zone, AVG(w.liters_consumed) AS avg_consumption
+FROM WaterUsage w
+JOIN Households h ON w.household_id = h.household_id
+GROUP BY h.city_zone;
