@@ -1,0 +1,4 @@
+# Households consuming more than 2000 liters in any record
+SELECT household_id, year, month, liters_consumed
+FROM WaterUsage
+WHERE liters_consumed > 2000;
