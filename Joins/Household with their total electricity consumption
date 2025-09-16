@@ -1,0 +1,5 @@
+# Household with their total electricity consumption
+SELECT h.household_name, h.city_zone, SUM(e.electricity_kwh) AS total_electricity
+FROM Households h
+JOIN EnergyUsage e ON h.household_id = e.household_id
+GROUP BY h.household_name, h.city_zone;
