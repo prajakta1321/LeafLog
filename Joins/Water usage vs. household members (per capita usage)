@@ -1,0 +1,6 @@
+# Water usage vs. household members (per capita usage)
+SELECT h.household_name, h.members_count,
+       SUM(w.liters_consumed) / h.members_count AS liters_per_person
+FROM Households h
+JOIN WaterUsage w ON h.household_id = w.household_id
+GROUP BY h.household_name, h.members_count;
