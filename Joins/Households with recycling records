@@ -1,0 +1,6 @@
+# Households with recycling records
+SELECT h.household_name, w.month, w.year,
+       w.recycled_kg, w.non_recycled_kg
+FROM Households h
+JOIN WasteManagement w ON h.household_id = w.household_id
+ORDER BY w.year, w.month;
