@@ -1,0 +1,5 @@
+# Households with green initiatives and start dates
+SELECT h.household_name, g.initiative_name, g.start_date
+FROM Households h
+JOIN GreenInitiatives g ON h.household_id = g.household_id
+ORDER BY g.start_date;
