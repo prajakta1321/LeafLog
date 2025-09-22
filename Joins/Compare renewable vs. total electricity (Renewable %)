@@ -1,0 +1,8 @@
+# Compare renewable vs. total electricity (Renewable %)
+SELECT h.household_name,
+       SUM(e.renewable_kwh) AS total_renewable,
+       SUM(e.electricity_kwh) AS total_electricity,
+       ROUND(SUM(e.renewable_kwh) / SUM(e.electricity_kwh) * 100, 2) AS renewable_percentage
+FROM Households h
+JOIN EnergyUsage e ON h.household_id = e.household_id
+GROUP BY h.household_name;
