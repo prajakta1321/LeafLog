@@ -1,0 +1,11 @@
+# Combine Energy, Water, and Waste usage in one view
+SELECT h.household_name, e.year,
+       SUM(e.electricity_kwh) AS electricity_used,
+       SUM(wu.liters_consumed) AS water_used,
+       SUM(wm.recycled_kg + wm.non_recycled_kg) AS total_waste
+FROM Households h
+JOIN EnergyUsage e ON h.household_id = e.household_id
+JOIN WaterUsage wu ON h.household_id = wu.household_id AND e.year = wu.year
+JOIN WasteManagement wm ON h.household_id = wm.household_id AND e.year = wm.year
+GROUP BY h.household_name, e.year
+ORDER BY e.year;
