@@ -1,0 +1,19 @@
+# Find households that started green initiatives and their total electricity use in that year
+
+UPDATE EnergyUsage
+SET year = 2023
+WHERE year IS NULL AND usage_id > 0;
+
+UPDATE EnergyUsage
+SET year = 2023
+WHERE year IS NULL
+LIMIT 1000;
+
+
+SELECT h.household_name, g.initiative_name, g.start_date,
+       SUM(e.electricity_kwh) AS yearly_electricity
+FROM Households h
+JOIN GreenInitiatives g ON h.household_id = g.household_id
+JOIN EnergyUsage e ON h.household_id = e.household_id 
+                   AND YEAR(g.start_date) = e.year
+GROUP BY h.household_name, g.initiative_name, g.start_date;
