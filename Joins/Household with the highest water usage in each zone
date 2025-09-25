@@ -1,0 +1,15 @@
+# Household with the highest water usage in each zone
+SELECT h.city_zone, h.household_name, SUM(w.liters_consumed) AS total_water
+FROM Households h
+JOIN WaterUsage w ON h.household_id = w.household_id
+GROUP BY h.city_zone, h.household_name
+HAVING SUM(w.liters_consumed) = (
+    SELECT MAX(SUM_W) 
+    FROM (
+        SELECT h2.city_zone, h2.household_id, SUM(w2.liters_consumed) AS SUM_W
+        FROM Households h2
+        JOIN WaterUsage w2 ON h2.household_id = w2.household_id
+        GROUP BY h2.city_zone, h2.household_id
+    ) AS sub
+    WHERE sub.city_zone = h.city_zone
+);
