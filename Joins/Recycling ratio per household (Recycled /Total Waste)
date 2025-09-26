@@ -1,0 +1,8 @@
+# Recycling ratio per household (Recycled / Total Waste)
+SELECT h.household_name,
+       SUM(w.recycled_kg) AS recycled,
+       SUM(w.recycled_kg + w.non_recycled_kg) AS total_waste,
+       ROUND(SUM(w.recycled_kg) / SUM(w.recycled_kg + w.non_recycled_kg) * 100, 2) AS recycling_percentage
+FROM Households h
+JOIN WasteManagement w ON h.household_id = w.household_id
+GROUP BY h.household_name;
