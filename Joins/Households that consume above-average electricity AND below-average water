@@ -1,0 +1,20 @@
+# Households that consume above-average electricity AND below-average water
+SELECT h.household_name, 
+       SUM(e.electricity_kwh) AS total_electricity, 
+       SUM(w.liters_consumed) AS total_water
+FROM Households h
+JOIN EnergyUsage e ON h.household_id = e.household_id
+JOIN WaterUsage w ON h.household_id = w.household_id
+GROUP BY h.household_name
+HAVING SUM(e.electricity_kwh) > (
+           SELECT AVG(total_e) 
+           FROM (SELECT SUM(e1.electricity_kwh) AS total_e
+                 FROM EnergyUsage e1
+                 GROUP BY e1.household_id) AS sub_e
+       )
+   AND SUM(w.liters_consumed) < (
+           SELECT AVG(total_w) 
+           FROM (SELECT SUM(w1.liters_consumed) AS total_w
+                 FROM WaterUsage w1
+                 GROUP BY w1.household_id) AS sub_w
+       );
