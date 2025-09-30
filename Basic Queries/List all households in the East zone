@@ -1,0 +1,4 @@
+# List all households in the East zone
+SELECT household_name, members_count
+FROM Households
+WHERE city_zone = 'East';
