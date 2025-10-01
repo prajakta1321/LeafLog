@@ -1,0 +1,4 @@
+# Find households with more than 5 members
+SELECT household_name, members_count
+FROM Households
+WHERE members_count > 5;
