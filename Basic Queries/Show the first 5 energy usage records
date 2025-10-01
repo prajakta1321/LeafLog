@@ -1,0 +1,4 @@
+# Show the first 5 energy usage records
+SELECT *
+FROM EnergyUsage
+LIMIT 5;
