@@ -1,0 +1,4 @@
+# Show all waste records where non-recycled waste > recycled waste
+SELECT household_id, month, year, recycled_kg, non_recycled_kg
+FROM WasteManagement
+WHERE non_recycled_kg > recycled_kg;
