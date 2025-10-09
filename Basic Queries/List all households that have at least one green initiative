@@ -1,0 +1,5 @@
+
+# List all households that have at least one green initiative
+SELECT DISTINCT h.household_name
+FROM Households h
+JOIN GreenInitiatives g ON h.household_id = g.household_id;
