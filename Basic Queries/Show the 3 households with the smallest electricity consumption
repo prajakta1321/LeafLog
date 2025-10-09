@@ -1,0 +1,5 @@
+# Show the 3 households with the smallest electricity consumption
+SELECT household_id, electricity_kwh
+FROM EnergyUsage
+ORDER BY electricity_kwh ASC
+LIMIT 3;
