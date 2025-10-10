@@ -1,0 +1,4 @@
+# Find the households that used zero renewable energy
+SELECT household_id, electricity_kwh, renewable_kwh
+FROM EnergyUsage
+WHERE renewable_kwh = 0;
