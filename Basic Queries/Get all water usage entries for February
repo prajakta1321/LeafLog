@@ -1,0 +1,4 @@
+# Get all water usage entries for February (month=2)
+SELECT household_id, year, liters_consumed
+FROM WaterUsage
+WHERE month = 2;
