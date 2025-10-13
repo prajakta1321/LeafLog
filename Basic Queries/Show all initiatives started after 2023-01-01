@@ -1,0 +1,4 @@
+# Show all initiatives started after 2023-01-01
+SELECT household_id, initiative_name, start_date
+FROM GreenInitiatives
+WHERE start_date > '2023-01-01';
