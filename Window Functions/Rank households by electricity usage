@@ -1,0 +1,6 @@
+# Rank households by electricity usage
+SELECT 
+  household_id,
+  electricity_kwh,
+  RANK() OVER (ORDER BY electricity_kwh DESC) AS usage_rank
+FROM EnergyUsage;
