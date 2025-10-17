@@ -1,0 +1,8 @@
+# Find the cumulative (running) total of electricity used per household
+SELECT 
+  household_id,
+  month,
+  year,
+  electricity_kwh,
+  SUM(electricity_kwh) OVER (PARTITION BY household_id ORDER BY year, month) AS running_total
+FROM EnergyUsage;
