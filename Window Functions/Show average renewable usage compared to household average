@@ -1,0 +1,6 @@
+# Show average renewable usage compared to household average
+SELECT 
+  household_id,
+  renewable_kwh,
+  AVG(renewable_kwh) OVER (PARTITION BY household_id) AS avg_renewable_per_house
+FROM EnergyUsage;
