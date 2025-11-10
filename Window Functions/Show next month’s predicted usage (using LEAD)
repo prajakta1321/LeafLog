@@ -1,0 +1,7 @@
+# Show next month’s predicted usage (using LEAD)
+SELECT 
+  household_id,
+  month,
+  electricity_kwh,
+  LEAD(electricity_kwh) OVER (PARTITION BY household_id ORDER BY month) AS next_month_usage
+FROM EnergyUsage;
