@@ -9,3 +9,6 @@
  #  🎯 Process Flow :
 
  ![process flow diagram](https://github.com/user-attachments/assets/c8c3adac-6785-4191-b929-c4efd62db15b)
+
+# Power BI Dashboard : 
+[leaflog dashboard - power bi.pdf](https://github.com/user-attachments/files/23470656/leaflog.dashboard.-.power.bi.pdf)
