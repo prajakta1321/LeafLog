@@ -11,4 +11,4 @@
  ![process flow diagram](https://github.com/user-attachments/assets/c8c3adac-6785-4191-b929-c4efd62db15b)
 
 # Power BI Dashboard : 
-[leaflog dashboard - power bi.pdf](https://github.com/user-attachments/files/23470656/leaflog.dashboard.-.power.bi.pdf)
+![dashboard](https://github.com/user-attachments/assets/2cdcac3b-4a94-4e5c-b7d2-ae4e28a7d5f7)
