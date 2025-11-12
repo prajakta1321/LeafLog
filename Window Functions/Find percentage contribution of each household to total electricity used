@@ -1,0 +1,8 @@
+# Find percentage contribution of each household to total electricity used
+SELECT 
+  household_id,
+  electricity_kwh,
+  ROUND(
+    (electricity_kwh * 100.0 / SUM(electricity_kwh) OVER ()), 2
+  ) AS percent_of_total
+FROM EnergyUsage;
