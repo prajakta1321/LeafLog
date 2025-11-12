@@ -1,0 +1,7 @@
+# Rank households by water consumption within each year
+SELECT 
+  year,
+  household_id,
+  liters_consumed,
+  DENSE_RANK() OVER (PARTITION BY year ORDER BY liters_consumed DESC) AS yearly_rank
+FROM WaterUsage;
