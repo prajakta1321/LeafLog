@@ -1,0 +1,9 @@
+# Show households with a moving average of the last 3 months’ electricity usage
+SELECT 
+  household_id,
+  month,
+  electricity_kwh,
+  AVG(electricity_kwh) OVER (
+    PARTITION BY household_id ORDER BY month ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+  ) AS moving_avg
+FROM EnergyUsage;
