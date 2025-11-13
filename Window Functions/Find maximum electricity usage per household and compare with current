@@ -1,0 +1,8 @@
+# Find maximum electricity usage per household and compare with current
+SELECT 
+  household_id,
+  month,
+  electricity_kwh,
+  MAX(electricity_kwh) OVER (PARTITION BY household_id) AS max_usage,
+  electricity_kwh - MAX(electricity_kwh) OVER (PARTITION BY household_id) AS diff_from_max
+FROM EnergyUsage;
