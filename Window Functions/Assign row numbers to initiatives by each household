@@ -1,0 +1,6 @@
+# Assign row numbers to initiatives by each household
+SELECT 
+  household_id,
+  initiative_name,
+  ROW_NUMBER() OVER (PARTITION BY household_id ORDER BY start_date) AS initiative_number
+FROM GreenInitiatives;
