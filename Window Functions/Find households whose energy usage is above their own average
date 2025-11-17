@@ -1,0 +1,12 @@
+# Find households whose energy usage is above their own average
+SELECT 
+  household_id,
+  month,
+  electricity_kwh,
+  AVG(electricity_kwh) OVER (PARTITION BY household_id) AS avg_usage,
+  CASE 
+    WHEN electricity_kwh > AVG(electricity_kwh) OVER (PARTITION BY household_id)
+    THEN 'Above Average'
+    ELSE 'Below Average'
+  END AS usage_category
+FROM EnergyUsage;
