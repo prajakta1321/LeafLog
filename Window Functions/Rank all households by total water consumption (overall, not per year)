@@ -1,0 +1,7 @@
+# Rank all households by total water consumption (overall, not per year)
+SELECT 
+  household_id,
+  SUM(liters_consumed) AS total_water,
+  RANK() OVER (ORDER BY SUM(liters_consumed) DESC) AS water_rank
+FROM WaterUsage
+GROUP BY household_id;
