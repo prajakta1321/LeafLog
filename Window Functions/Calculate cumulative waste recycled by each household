@@ -1,0 +1,7 @@
+# Calculate cumulative waste recycled by each household
+SELECT 
+  household_id,
+  waste_type,
+  recycled_kg,
+  SUM(recycled_kg) OVER (PARTITION BY household_id ORDER BY waste_id) AS cumulative_recycled
+FROM WasteManagement;
