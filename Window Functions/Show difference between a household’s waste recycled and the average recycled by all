@@ -1,0 +1,7 @@
+# Show difference between a household’s waste recycled and the average recycled by all
+SELECT 
+  household_id,
+  recycled_kg,
+  ROUND(AVG(recycled_kg) OVER (), 2) AS avg_recycled,
+  recycled_kg - AVG(recycled_kg) OVER () AS diff_from_avg
+FROM WasteManagement;
