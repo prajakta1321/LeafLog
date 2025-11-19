@@ -1,0 +1,11 @@
+# Identify top 3 electricity consumers per month
+SELECT *
+FROM (
+  SELECT 
+    month,
+    household_id,
+    electricity_kwh,
+    RANK() OVER (PARTITION BY month ORDER BY electricity_kwh DESC) AS rank_per_month
+  FROM EnergyUsage
+) ranked
+WHERE rank_per_month <= 3;
