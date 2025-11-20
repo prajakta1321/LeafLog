@@ -1,0 +1,7 @@
+# Rank households by renewable energy usage
+SELECT 
+    household_id,
+    SUM(renewable_kwh) AS total_renewable,
+    RANK() OVER (ORDER BY SUM(renewable_kwh) DESC) AS renewable_rank
+FROM EnergyUsage
+GROUP BY household_id;
