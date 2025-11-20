@@ -1,0 +1,9 @@
+# Find water consumption percentile by city zone
+SELECT 
+    h.city_zone,
+    w.household_id,
+    SUM(w.liters_consumed) AS total_liters,
+    PERCENT_RANK() OVER (PARTITION BY h.city_zone ORDER BY SUM(w.liters_consumed)) AS water_percentile
+FROM WaterUsage w
+JOIN Households h ON w.household_id = h.household_id
+GROUP BY h.city_zone, w.household_id;
