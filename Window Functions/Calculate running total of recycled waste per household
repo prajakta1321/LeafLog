@@ -1,0 +1,8 @@
+# Calculate running total of recycled waste per household
+SELECT 
+    household_id,
+    month,
+    year,
+    recycled_kg,
+    SUM(recycled_kg) OVER (PARTITION BY household_id ORDER BY year, month) AS cumulative_recycled
+FROM WasteManagement;
