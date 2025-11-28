@@ -1,0 +1,9 @@
+# Compare current month’s electricity usage with previous month
+SELECT 
+    household_id,
+    month,
+    year,
+    electricity_kwh,
+    LAG(electricity_kwh, 1) OVER (PARTITION BY household_id ORDER BY year, month) AS prev_month_usage,
+    (electricity_kwh - LAG(electricity_kwh, 1) OVER (PARTITION BY household_id ORDER BY year, month)) AS usage_difference
+FROM EnergyUsage;
