@@ -1,0 +1,5 @@
+# Find average monthly renewable energy across all households
+SELECT 
+    month,
+    AVG(renewable_kwh) OVER (ORDER BY month ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS avg_renewable_monthly
+FROM EnergyUsage;
