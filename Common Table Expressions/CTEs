@@ -1,0 +1,10 @@
+# Average energy consumption per zone
+WITH ZoneEnergy AS (
+    SELECT 
+        h.city_zone,
+        AVG(e.electricity_kwh) AS avg_energy
+    FROM EnergyUsage e
+    JOIN Households h ON e.household_id = h.household_id
+    GROUP BY h.city_zone
+)
+SELECT * FROM ZoneEnergy;
