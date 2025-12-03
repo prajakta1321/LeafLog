@@ -1,0 +1,10 @@
+# Identify households exceeding average water usage
+WITH AvgWater AS (
+    SELECT AVG(liters_consumed) AS avg_liters
+    FROM WaterUsage
+)
+SELECT 
+    w.household_id,
+    w.liters_consumed
+FROM WaterUsage w, AvgWater
+WHERE w.liters_consumed > AvgWater.avg_liters;
