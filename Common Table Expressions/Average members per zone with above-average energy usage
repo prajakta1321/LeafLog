@@ -1,0 +1,20 @@
+# Average members per zone with above-average energy usage
+WITH AvgEnergy AS (
+    SELECT AVG(electricity_kwh) AS avg_usage
+    FROM EnergyUsage
+),
+HighUsers AS (
+    SELECT 
+        h.household_id,
+        h.city_zone,
+        h.members_count
+    FROM EnergyUsage e
+    JOIN Households h ON e.household_id = h.household_id
+    JOIN AvgEnergy a
+    WHERE e.electricity_kwh > a.avg_usage
+)
+SELECT 
+    city_zone,
+    AVG(members_count) AS avg_members
+FROM HighUsers
+GROUP BY city_zone;
