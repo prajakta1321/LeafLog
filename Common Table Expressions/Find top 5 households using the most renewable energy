@@ -1,0 +1,12 @@
+# Find top 5 households using the most renewable energy
+WITH RenewableTotals AS (
+    SELECT 
+        household_id,
+        SUM(renewable_kwh) AS total_renewable
+    FROM EnergyUsage
+    GROUP BY household_id
+)
+SELECT * 
+FROM RenewableTotals
+ORDER BY total_renewable DESC
+LIMIT 5;
