@@ -1,0 +1,9 @@
+# View: Average energy usage by city zone
+CREATE VIEW ZoneEnergyView AS
+SELECT 
+    h.city_zone,
+    ROUND(AVG(e.electricity_kwh), 2) AS avg_energy_kwh,
+    ROUND(AVG(e.renewable_kwh), 2) AS avg_renewable_kwh
+FROM EnergyUsage e
+JOIN Households h ON e.household_id = h.household_id
+GROUP BY h.city_zone;
