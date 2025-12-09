@@ -1,0 +1,9 @@
+# View: Monthly water consumption summary
+CREATE VIEW MonthlyWaterSummary AS
+SELECT 
+    month,
+    year,
+    ROUND(SUM(liters_consumed), 2) AS total_water_liters,
+    ROUND(AVG(liters_consumed), 2) AS avg_water_per_household
+FROM WaterUsage
+GROUP BY month, year;
