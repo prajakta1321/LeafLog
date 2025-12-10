@@ -1,0 +1,9 @@
+# View: Household waste efficiency
+CREATE VIEW WasteEfficiency AS
+SELECT 
+    household_id,
+    SUM(recycled_kg) AS total_recycled,
+    SUM(non_recycled_kg) AS total_non_recycled,
+    ROUND((SUM(recycled_kg) / (SUM(recycled_kg) + SUM(non_recycled_kg))) * 100, 2) AS recycle_percentage
+FROM WasteManagement
+GROUP BY household_id;
