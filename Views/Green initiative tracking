@@ -1,0 +1,10 @@
+# View: Green initiative tracking
+CREATE VIEW ActiveInitiatives AS
+SELECT 
+    h.household_name,
+    g.initiative_name,
+    g.start_date,
+    h.city_zone
+FROM GreenInitiatives g
+JOIN Households h ON g.household_id = h.household_id
+WHERE g.start_date >= '2023-01-01';
