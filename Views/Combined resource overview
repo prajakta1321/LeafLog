@@ -1,0 +1,14 @@
+# View: Combined resource overview
+CREATE VIEW HouseholdResourceSummary AS
+SELECT 
+    h.household_id,
+    h.household_name,
+    h.city_zone,
+    SUM(e.electricity_kwh) AS total_electricity,
+    SUM(w.liters_consumed) AS total_water,
+    SUM(wm.recycled_kg + wm.non_recycled_kg) AS total_waste
+FROM Households h
+LEFT JOIN EnergyUsage e ON h.household_id = e.household_id
+LEFT JOIN WaterUsage w ON h.household_id = w.household_id
+LEFT JOIN WasteManagement wm ON h.household_id = wm.household_id
+GROUP BY h.household_id, h.household_name, h.city_zone;
