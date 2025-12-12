@@ -1,0 +1,4 @@
+# To see the data in any view:
+# SELECT * FROM ViewName;
+
+select * from ZoneEnergyView;
