@@ -1,0 +1,3 @@
+ALTER TABLE WaterUsage
+ADD CONSTRAINT chk_water_positive
+CHECK (liters_consumed >= 0);
