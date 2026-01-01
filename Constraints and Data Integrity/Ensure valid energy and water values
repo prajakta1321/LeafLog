@@ -1,0 +1,4 @@
+# CHECK Constraint — Ensure valid energy and water values
+ALTER TABLE EnergyUsage
+ADD CONSTRAINT chk_energy_positive
+CHECK (electricity_kwh >= 0 AND renewable_kwh >= 0);
