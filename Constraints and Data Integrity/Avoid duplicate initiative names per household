@@ -1,0 +1,4 @@
+# UNIQUE Constraint — Avoid duplicate initiative names per household
+ALTER TABLE GreenInitiatives
+ADD CONSTRAINT unique_initiative_per_household
+UNIQUE (household_id, initiative_name);
