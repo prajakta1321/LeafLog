@@ -1,0 +1,4 @@
+# DEFAULT Constraint — Auto-assign default values
+ALTER TABLE WasteManagement
+ALTER recycled_kg SET DEFAULT 0,
+ALTER non_recycled_kg SET DEFAULT 0;
