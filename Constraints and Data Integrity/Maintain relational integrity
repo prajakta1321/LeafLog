@@ -1,0 +1,6 @@
+# FOREIGN KEY Constraint — Maintain relational integrity
+ALTER TABLE EnergyUsage
+ADD CONSTRAINT fk_energy_household
+FOREIGN KEY (household_id) REFERENCES Households(household_id)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
