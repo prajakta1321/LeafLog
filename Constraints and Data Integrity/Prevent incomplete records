@@ -1,0 +1,5 @@
+# NOT NULL Constraint — Prevent incomplete records
+ALTER TABLE EnergyUsage
+MODIFY electricity_kwh DECIMAL(10,2) NOT NULL,
+MODIFY month INT NOT NULL,
+MODIFY year INT NOT NULL;
