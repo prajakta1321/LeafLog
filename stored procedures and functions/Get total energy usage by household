@@ -1,0 +1,13 @@
+# Stored Procedure — Get total energy usage by household
+DELIMITER //
+CREATE PROCEDURE GetTotalEnergyByHousehold(IN h_id INT)
+BEGIN
+    SELECT 
+        household_id,
+        SUM(electricity_kwh) AS total_electricity,
+        SUM(renewable_kwh) AS total_renewable
+    FROM EnergyUsage
+    WHERE household_id = h_id
+    GROUP BY household_id;
+END //
+DELIMITER ;
