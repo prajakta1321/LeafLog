@@ -11,3 +11,6 @@ BEGIN
     GROUP BY household_id;
 END //
 DELIMITER ;
+
+# usage
+CALL GetTotalEnergyByHousehold(5);
