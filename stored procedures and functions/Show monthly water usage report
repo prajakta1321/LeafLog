@@ -1,0 +1,13 @@
+# Stored Procedure — Show monthly water usage report
+DELIMITER //
+CREATE PROCEDURE MonthlyWaterReport(IN m INT, IN y INT)
+BEGIN
+    SELECT 
+        h.household_name,
+        h.city_zone,
+        w.liters_consumed
+    FROM WaterUsage w
+    JOIN Households h ON w.household_id = h.household_id
+    WHERE w.month = m AND w.year = y;
+END //
+DELIMITER ;
