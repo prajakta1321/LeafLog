@@ -11,3 +11,6 @@ BEGIN
     WHERE w.month = m AND w.year = y;
 END //
 DELIMITER ;
+
+# Usage:
+CALL MonthlyWaterReport(3, 2024); 
