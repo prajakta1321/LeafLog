@@ -17,3 +17,6 @@ BEGIN
     RETURN ROUND(percent, 2);
 END //
 DELIMITER ;
+
+# Usage:
+SELECT GetRecyclePercent(7);
