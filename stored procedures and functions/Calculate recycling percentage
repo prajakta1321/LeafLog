@@ -1,0 +1,19 @@
+# Function — Calculate recycling percentage
+DELIMITER //
+CREATE FUNCTION GetRecyclePercent(h_id INT)
+RETURNS DECIMAL(5,2)
+DETERMINISTIC
+BEGIN
+    DECLARE recycled DECIMAL(10,2);
+    DECLARE total DECIMAL(10,2);
+    DECLARE percent DECIMAL(5,2);
+    
+    SELECT SUM(recycled_kg), SUM(recycled_kg + non_recycled_kg)
+    INTO recycled, total
+    FROM WasteManagement
+    WHERE household_id = h_id;
+    
+    SET percent = (recycled / total) * 100;
+    RETURN ROUND(percent, 2);
+END //
+DELIMITER ;
