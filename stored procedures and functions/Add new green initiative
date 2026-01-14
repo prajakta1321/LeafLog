@@ -1,0 +1,12 @@
+# Stored Procedure — Add new green initiative
+DELIMITER //
+CREATE PROCEDURE AddGreenInitiative(
+    IN h_id INT,
+    IN init_name VARCHAR(100),
+    IN start_dt DATE
+)
+BEGIN
+    INSERT INTO GreenInitiatives (household_id, initiative_name, start_date)
+    VALUES (h_id, init_name, start_dt);
+END //
+DELIMITER ;
