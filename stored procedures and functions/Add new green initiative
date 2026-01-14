@@ -10,3 +10,6 @@ BEGIN
     VALUES (h_id, init_name, start_dt);
 END //
 DELIMITER ;
+
+# Usage:
+CALL AddGreenInitiative(3, 'Community Composting', '2024-04-10');
