@@ -16,3 +16,6 @@ BEGIN
     RETURN ROUND(ratio, 2);
 END //
 DELIMITER ;
+
+# Usage:
+SELECT AvgRenewableRatio();
