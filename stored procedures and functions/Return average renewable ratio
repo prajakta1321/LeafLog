@@ -1,0 +1,18 @@
+# Function — Return average renewable ratio
+DELIMITER //
+CREATE FUNCTION AvgRenewableRatio()
+RETURNS DECIMAL(5,2)
+DETERMINISTIC
+BEGIN
+    DECLARE total_renew DECIMAL(10,2);
+    DECLARE total_elec DECIMAL(10,2);
+    DECLARE ratio DECIMAL(5,2);
+    
+    SELECT SUM(renewable_kwh), SUM(electricity_kwh)
+    INTO total_renew, total_elec
+    FROM EnergyUsage;
+    
+    SET ratio = (total_renew / total_elec) * 100;
+    RETURN ROUND(ratio, 2);
+END //
+DELIMITER ;
