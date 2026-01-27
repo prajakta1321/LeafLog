@@ -1,0 +1,11 @@
+# Stored Procedure: Calculate Average Energy Usage
+DELIMITER //
+CREATE PROCEDURE GetAvgEnergyUsage()
+BEGIN
+  SELECT 
+    AVG(electricity_kwh) AS avg_electricity,
+    AVG(gas_kwh) AS avg_gas,
+    AVG(renewable_energy_kwh) AS avg_renewable
+  FROM EnergyUsage;
+END //
+DELIMITER ;
