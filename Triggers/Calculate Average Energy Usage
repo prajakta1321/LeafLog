@@ -9,3 +9,6 @@ BEGIN
   FROM EnergyUsage;
 END //
 DELIMITER ;
+
+# usage
+CALL GetAvgEnergyUsage();
