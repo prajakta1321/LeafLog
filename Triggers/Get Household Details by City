@@ -9,3 +9,5 @@ DELIMITER ;
 
 # usage
 CALL GetHouseholdByCity('Mumbai');
+
+
