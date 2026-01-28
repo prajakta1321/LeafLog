@@ -6,3 +6,6 @@ BEGIN
   WHERE city = city_name;
 END //
 DELIMITER ;
+
+# usage
+CALL GetHouseholdByCity('Mumbai');
