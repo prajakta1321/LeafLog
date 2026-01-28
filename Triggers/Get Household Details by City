@@ -1,0 +1,8 @@
+# Stored Procedure: Get Household Details by City
+DELIMITER //
+CREATE PROCEDURE GetHouseholdByCity(IN city_name VARCHAR(50))
+BEGIN
+  SELECT * FROM Household
+  WHERE city = city_name;
+END //
+DELIMITER ;
