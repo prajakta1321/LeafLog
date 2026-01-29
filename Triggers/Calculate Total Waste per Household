@@ -12,3 +12,8 @@ BEGIN
   RETURN total;
 END //
 DELIMITER ;
+
+# usage
+SELECT household_id, TotalWaste(household_id) AS total_waste
+FROM WasteManagement;
+
