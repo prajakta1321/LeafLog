@@ -1,0 +1,14 @@
+# Function: Calculate Total Waste per Household
+DELIMITER //
+CREATE FUNCTION TotalWaste(hid INT)
+RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+  DECLARE total DECIMAL(10,2);
+  SELECT SUM(recyclable_kg + non_recyclable_kg)
+  INTO total
+  FROM WasteManagement
+  WHERE household_id = hid;
+  RETURN total;
+END //
+DELIMITER ;
