@@ -1,0 +1,14 @@
+# Function: Calculate Water Efficiency
+DELIMITER //
+CREATE FUNCTION WaterEfficiency(hid INT)
+RETURNS DECIMAL(10,2)
+DETERMINISTIC
+BEGIN
+  DECLARE efficiency DECIMAL(10,2);
+  SELECT AVG(water_saved_liters / liters_consumed * 100)
+  INTO efficiency
+  FROM WaterUsage
+  WHERE household_id = hid;
+  RETURN IFNULL(efficiency, 0);
+END //
+DELIMITER ;
