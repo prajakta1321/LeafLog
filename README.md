@@ -15,7 +15,30 @@
 
 
 # FRONT END AND API :
+ How to run :
+
+ ```
+cd leaflog-backend              # cd (folder_name)
+```
+
+start Virtual Environment :
+
+```
+.\.venv\Scripts\activate
+```
+
+Install FastAPI Uvicorn :
+
+```
+pip install fastapi uvicorn mysql-connector-python
+```
+Run the app :
+
+```
+uvicorn main:app --reload
+```
 
 # CURRENT PROGRESS : 
-<img width="852" height="444" alt="leaflog progress 1 api (2)" src="https://github.com/user-attachments/assets/955ab947-d537-4326-b871-ec595af93479" />
+
+<img width="1200" height="613" alt="image" src="https://github.com/user-attachments/assets/7082731b-d59b-4dff-bf89-fc41129e2cc6" />
 
