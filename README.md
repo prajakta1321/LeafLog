@@ -14,7 +14,7 @@
 ![dashboard](https://github.com/user-attachments/assets/2cdcac3b-4a94-4e5c-b7d2-ae4e28a7d5f7)
 
 
-# FRONT END AND API :
+# Fast API :
  How to run :
 
  ```
