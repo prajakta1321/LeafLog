@@ -12,3 +12,10 @@
 
 # Power BI Dashboard : 
 ![dashboard](https://github.com/user-attachments/assets/2cdcac3b-4a94-4e5c-b7d2-ae4e28a7d5f7)
+
+
+# FRONT END AND API :
+
+# CURRENT PROGRESS : 
+<img width="852" height="444" alt="leaflog progress 1 api (2)" src="https://github.com/user-attachments/assets/955ab947-d537-4326-b871-ec595af93479" />
+
