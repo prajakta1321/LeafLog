@@ -48,3 +48,7 @@ Using Flask :
 
 ![progress 3](https://github.com/user-attachments/assets/8ceb382b-319f-47c8-a946-3e322f132fc8)
 
+Using Flask to connect the HTML Form to UI :
+
+![progress 4](https://github.com/user-attachments/assets/f31029d7-477d-4006-85b7-aea22afcd715)
+
