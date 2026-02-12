@@ -52,3 +52,7 @@ Using Flask to connect the HTML Form to UI :
 
 ![progress 4](https://github.com/user-attachments/assets/f31029d7-477d-4006-85b7-aea22afcd715)
 
+Energy Table :
+
+![progress 5](https://github.com/user-attachments/assets/e841fce9-3c4b-43e3-8be5-b294d1f5396d)
+
