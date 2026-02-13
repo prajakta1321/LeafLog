@@ -56,3 +56,7 @@ Connect the Energy table to database:
 
 ![progress 5](https://github.com/user-attachments/assets/e841fce9-3c4b-43e3-8be5-b294d1f5396d)
 
+Add a Dashboard page with summary data :
+
+![progress 6](https://github.com/user-attachments/assets/aea83854-d747-4bfc-9386-c03f4efcbbc2)
+
