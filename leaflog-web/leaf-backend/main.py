@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI    # libraries
 from database import get_connection
 from models import Household
 import database
