@@ -1,0 +1,113 @@
+<!-- version 1 below
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>LeafLog Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>LeafLog – Sustainability Dashboard</h1>
+    <h2>Electricity Usage Chart</h2>
+    <canvas id="energyChart" width="400" height="200"></canvas>
+
+    <table border="1">
+        <tr>
+            <th>City Zone</th>
+            <th>Total Energy (kWh)</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.city_zone }}</td>
+            <td>{{ row.total_energy }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+
+
+<h2>Sustainability Dashboard</h2>
+
+<table border="1">
+    <tr>
+        <th>Household</th>
+        <th>Total Electricity Usage</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row.household_name }}</td>
+        <td>{{ row.total_electricity }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script>
+const labels = {{ data | map(attribute='household_name') | list | tojson }};
+const electricity = {{ data | map(attribute='total_electricity') | list | tojson }};
+
+const ctx = document.getElementById('energyChart').getContext('2d');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Electricity Usage (kWh)',
+            data: electricity
+        }]
+    }
+});
+</script>
+version 2 below 
+-->
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>LeafLog – Sustainability Dashboard</h1>
+<h2>Electricity Usage Chart</h2>
+
+
+<div style="width: 500px; margin: auto;">
+    <canvas id="energyChart"></canvas>
+</div>
+
+<table border="1">
+    <tr>
+        <th>Household</th>
+        <th>Total Electricity Usage</th>
+    </tr>
+
+    {% for row in data %}
+    <tr>
+        <td>{{ row.household_name }}</td>
+        <td>{{ row.total_electricity }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const labels = {{ data | map(attribute='household_name') | list | tojson }};
+const electricity = {{ data | map(attribute='total_electricity') | list | tojson }};
+
+const ctx = document.getElementById('energyChart').getContext('2d');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'Electricity Usage (kWh)',
+            data: electricity
+        }]
+    }
+});
+
+
+</script>
+
+{% endblock %}
