@@ -1,0 +1,18 @@
+<!--connect the Energy page to the database.-->>
+<h2>Energy Usage</h2>    
+
+<table border="1">
+    <tr>
+        <th>Household ID</th>
+        <th>Electricity (kWh)</th>
+        <th>Month</th>
+    </tr>
+
+    {% for e in energy %}
+    <tr>
+        <td>{{ e.household_id }}</td>
+        <td>{{ e.electricity_kwh }}</td>
+        <td>{{ e.month }}</td>
+    </tr>
+    {% endfor %}
+</table>
