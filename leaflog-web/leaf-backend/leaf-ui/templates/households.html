@@ -1,0 +1,19 @@
+<h2>Households</h2>
+
+<table border="1">
+<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Zone</th>
+    <th>Members</th>
+</tr>
+
+{% for h in households %}
+<tr>
+    <td>{{ h.household_id }}</td>
+    <td>{{ h.household_name }}</td>
+    <td>{{ h.city_zone }}</td>
+    <td>{{ h.members_count }}</td>
+</tr>
+{% endfor %}
+</table>
