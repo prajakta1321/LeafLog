@@ -1,0 +1,38 @@
+
+<!-- version 1
+<h1> Leaflog Sustainability Tracker <h1>
+    <a href="/households">View Households</a>
+-->
+
+<!-- version 2
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LeafLog</title>
+</head>
+<body>
+    <h1>Welcome to LeafLog </h1>
+    <p>Your plant tracking assistant</p>
+</body>
+</html>-->
+
+<!-- version 3-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LeafLog</title>
+</head>
+<body>
+    <h1>LeafLog Sustainability Tracker</h1>
+
+    <h2>Add Household</h2>
+
+    <form method="POST" action="/add-household">
+        <input type="text" name="household_name" placeholder="Household Name" required>
+        <input type="text" name="city_zone" placeholder="City Zone" required>
+        <input type="number" name="members_count" placeholder="Members Count" required>
+        <button type="submit">Add Household</button>
+    </form>
+
+</body>
+</html>
