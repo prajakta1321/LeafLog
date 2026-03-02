@@ -48,15 +48,15 @@ Using Flask :
 
 ![progress 3](https://github.com/user-attachments/assets/8ceb382b-319f-47c8-a946-3e322f132fc8)
 
-Using Flask to connect the HTML Form to UI :
+Using Flask to connect the HTML Form to UI:
 
 ![progress 4](https://github.com/user-attachments/assets/f31029d7-477d-4006-85b7-aea22afcd715)
 
-Connect the Energy table to database:
+Connect the Energy table to database :
 
 ![progress 5](https://github.com/user-attachments/assets/e841fce9-3c4b-43e3-8be5-b294d1f5396d)
 
-Add a Dashboard page with summary data :
+Add a Dashboard page with summary data:
 
 ![progress 6](https://github.com/user-attachments/assets/aea83854-d747-4bfc-9386-c03f4efcbbc2)
 
